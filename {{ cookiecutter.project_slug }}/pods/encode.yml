@@ -1,4 +1,13 @@
+{%- if cookiecutter.task_type | lower == 'cv' %}
 !BiTImageEncoder
 with:
   model_path: pretrained
   pool_strategy: avg
+{%- endif %}
+{%- if cookiecutter.task_type | lower == 'nlp' %}
+!TransformerTorchEncoder
+with:
+  pooling_strategy: cls
+  model_name: distilbert-base-cased
+  max_length: 96
+{%- endif %}

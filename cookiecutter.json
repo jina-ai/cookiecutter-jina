@@ -3,8 +3,10 @@
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "author_name": "Jina's friend",
   "project_short_description": "A demo neural search project that uses Jina. Jina is the cloud-native neural search framework powered by state-of-the-art AI and deep learning.",
-  "version": "0.0.1",
+  "task_type": ["cv", "nlp"],
+  "index_type": ["files", "strings", "ndarray", "customized"],
   "public_port": "65481",
   "replicas": "2",
-  "shards": "8"
+  "shards": "8",
+  "version": "0.0.1"
 }

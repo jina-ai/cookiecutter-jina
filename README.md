@@ -16,7 +16,7 @@ pip install -U cookiecutter
 Generate a Jina project:
 
 ```bash
-cookiecutter https://github.com/jina-ai/cookiecutter-jina.git
+cookiecutter gh:jina-ai/cookiecutter-jina
 ```
 
 ## Fork This / Create Your Own

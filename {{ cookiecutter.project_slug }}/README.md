@@ -30,17 +30,17 @@ pip install -e .
 
 To build the docker image
 ```bash
-docker build -t jinaai/hub.app.{{ cookiecutter.project_slug }} .
+docker build -t jinaai/hub.app.{{ cookiecutter.project_slug }}:{{cookiecutter.version}} .
 ```
 
 To mount local directory and run:
 ```bash
-docker run -v "$(pwd)/j:/workspace" jinaai/hub.app.{{ cookiecutter.project_slug }}
+docker run -v "$(pwd)/j:/workspace" jinaai/hub.app.{{ cookiecutter.project_slug }}:{{cookiecutter.version}}
 ``` 
 
 To query
 ```bash
-docker run -p {{cookiecutter.public_port}}:{{cookiecutter.public_port}} -e "JINA_PORT=65481" jinaai/hub.app.{{ cookiecutter.project_slug }} search
+docker run -p {{cookiecutter.public_port}}:{{cookiecutter.public_port}} -e "JINA_PORT=65481" jinaai/hub.app.{{ cookiecutter.project_slug }}:{{cookiecutter.version}} search
 ```
 
 ## License

@@ -1,11 +1,11 @@
+__version__ = '{{ cookiecutter.version }}'
+
 import os
 import sys
 
 from jina.flow import Flow
 
 num_docs = os.environ.get('MAX_DOCS', 50000)
-image_src = 'data/**/*.png'
-
 
 def config():
     replicas = {{cookiecutter.replicas}} if sys.argv[1] == 'index' else 1
@@ -20,15 +20,32 @@ def config():
 
 # for index
 def index():
-    f = Flow.load_config('flow-index.yml')
+    f = Flow.load_config('flows/index.yml')
 
     with f:
-        f.index_files(image_src, batch_size=64, read_mode='rb', size=num_docs)
+        {%- if cookiecutter.index_type | lower == 'files' %}
+        f.index_files('data/**/*.png', batch_size=64, read_mode='rb', size=num_docs)
+        {%- endif %}
+        {%- if cookiecutter.index_type | lower == 'strings' %}
+        f.index_lines(['abc', 'cde', 'efg'], batch_size=64, read_mode='rb', size=num_docs)
+        {%- endif %}
+        {%- if cookiecutter.index_type | lower == 'ndarray' %}
+        import numpy as np
+        f.index_numpy(np.random.random([100, 512]), batch_size=64, read_mode='rb', size=num_docs)
+        {%- endif %}
+        {%- if cookiecutter.index_type | lower == 'customized' %}
 
+        def input_fn():
+            with open('README.md') as fp:
+                for v in fp:
+                    yield v
 
-# for search
+        f.index(input_fn, batch_size=64, read_mode='rb', size=num_docs)
+        {%- endif %}
+
+    # for search
 def search():
-    f = Flow.load_config('flow-query.yml')
+    f = Flow.load_config('flows/query.yml')
 
     with f:
         f.block()
@@ -36,7 +53,7 @@ def search():
 
 # for test before put into docker
 def dryrun():
-    f = Flow.load_config('flow-query.yml')
+    f = Flow.load_config('flows/query.yml')
 
     with f:
         pass
