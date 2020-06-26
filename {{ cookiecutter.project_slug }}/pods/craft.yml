@@ -1,3 +1,4 @@
+{%- if cookiecutter.task_type | lower == 'cv' %}
 !CompoundExecutor
 components:
   - !ImageReader
@@ -33,3 +34,9 @@ requests:
           executor: img_norm
     ControlRequest:
       - !ControlReqDriver {}
+{%- endif %}
+{%- if cookiecutter.task_type | lower == 'nlp' %}
+!Sentencizer
+metas:
+  name: sent_splitter
+{%- endif %}
