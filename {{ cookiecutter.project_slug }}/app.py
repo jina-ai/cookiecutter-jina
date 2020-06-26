@@ -27,11 +27,11 @@ def index():
         f.index_files('data/**/*.png', batch_size=64, read_mode='rb', size=num_docs)
         {%- endif %}
         {%- if cookiecutter.index_type | lower == 'strings' %}
-        f.index_lines(['abc', 'cde', 'efg'], batch_size=64, read_mode='rb', size=num_docs)
+        f.index_lines(['abc', 'cde', 'efg'], batch_size=64, read_mode='r', size=num_docs)
         {%- endif %}
         {%- if cookiecutter.index_type | lower == 'ndarray' %}
         import numpy as np
-        f.index_numpy(np.random.random([100, 512]), batch_size=64, read_mode='rb', size=num_docs)
+        f.index_numpy(np.random.random([100, 512]), batch_size=64, size=num_docs)
         {%- endif %}
         {%- if cookiecutter.index_type | lower == 'customized' %}
 
