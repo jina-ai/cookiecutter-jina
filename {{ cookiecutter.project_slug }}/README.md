@@ -20,11 +20,11 @@ pip install -e .
 
 ## Run
 
-| Command | Description |
-| :--- | :--- |
-|``python app.py index`` | To index files/data |
-| ``python app.py query`` | To run query on the index | 
-| ``python app.py dryrun`` | Sanity check on the topology | 
+| Command                  | Description                  |
+| :---                     | :---                         |
+| ``python app.py index``  | To index files/data          |
+| ``python app.py search`` | To run query on the index    |
+| ``python app.py dryrun`` | Sanity check on the topology |
 
 ## Run as a Docker Container
 
