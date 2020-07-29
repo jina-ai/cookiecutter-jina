@@ -1,3 +1,5 @@
 jina[devel]
+{%- if cookiecutter.task_type | lower == 'nlp' %}
 transformers==3.0.2
 torch==1.5.1
+{%- endif %}
