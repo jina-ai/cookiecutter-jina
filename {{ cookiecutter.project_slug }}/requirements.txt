@@ -3,3 +3,7 @@ jina[devel]
 transformers==3.0.2
 torch==1.5.1
 {%- endif %}
+
+{%- if cookiecutter.task_type | lower == 'cv' %}
+tensorflow >= 2.0
+{%- endif %}
