@@ -8,6 +8,7 @@ pods:
   encoder:
     yaml_path: pods/encode.yml
     replicas: $REPLICAS
+    parallel: $PARALLEL
     timeout_ready: 600000
     read_only: true
   chunk_idx:
