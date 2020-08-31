@@ -21,7 +21,7 @@ requests:
       - !SegmentDriver
         with:
           executor: img_read
-      - !ChunkCraftDriver
+      - !CraftDriver
         with:
           executor: img_norm
     SearchRequest:
@@ -29,7 +29,7 @@ requests:
       - !SegmentDriver
         with:
           executor: img_read
-      - !ChunkCraftDriver
+      - !CraftDriver
         with:
           executor: img_norm
     ControlRequest:
