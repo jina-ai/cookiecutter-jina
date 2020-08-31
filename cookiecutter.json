@@ -6,7 +6,7 @@
   "task_type": ["cv", "nlp"],
   "index_type": ["files", "strings", "ndarray", "customized"],
   "public_port": "65481",
-  "replicas": "2",
+  "parallel": "2",
   "shards": "8",
   "version": "0.0.1"
 }
