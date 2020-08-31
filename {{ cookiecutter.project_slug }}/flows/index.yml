@@ -19,4 +19,4 @@ pods:
     needs: gateway
   join_all:
     uses_internal: _merge
-    needs: [doc_idx, chunk_idx]
+    needs: [idx]
