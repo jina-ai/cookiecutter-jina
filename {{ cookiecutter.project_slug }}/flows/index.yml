@@ -3,20 +3,22 @@ with:
   logserver: true
 pods:
   crafter:
-    uses_internal: pods/craft.yml
+    uses: pods/craft.yml
+    parallel: $PARALLEL
     read_only: true
   encoder:
-    uses_internal: pods/encode.yml
+    uses: pods/encode.yml
     parallel: $PARALLEL
     timeout_ready: 600000
     read_only: true
   chunk_idx:
-    uses_internal: pods/chunk.yml
+    uses: pods/chunk.yml
     shards: $SHARDS
     separated_workspace: true
   doc_idx:
-    uses_internal: pods/doc.yml
-    needs: gateway
+    uses: pods/doc.yml
+    needs: crafter
   join_all:
-    uses_internal: _merge
-    needs: [idx]
+    uses: _merge
+    needs: [doc_indexer, chunk_indexer]
+    read_only: true
