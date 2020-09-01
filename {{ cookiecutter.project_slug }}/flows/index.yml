@@ -20,5 +20,5 @@ pods:
     needs: crafter
   join_all:
     uses: _merge
-    needs: [doc_indexer, chunk_indexer]
+    needs: [doc_idx, chunk_idx]
     read_only: true
