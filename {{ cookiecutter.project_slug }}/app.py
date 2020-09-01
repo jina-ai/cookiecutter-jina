@@ -5,7 +5,7 @@ import sys
 
 from jina.flow import Flow
 
-num_docs = os.environ.get('MAX_DOCS', 50000)
+num_docs = os.environ.get('MAX_DOCS', 500)
 
 def config():
     parallel = {{cookiecutter.parallel}} if sys.argv[1] == 'index' else 1
@@ -24,10 +24,14 @@ def index():
 
     with f:
         {%- if cookiecutter.index_type | lower == 'files' %}
-        f.index_files('data/**/*.png', batch_size=64, read_mode='rb', size=num_docs)
+        f.index_files('data/**/*.png', batch_size=8, read_mode='rb', size=num_docs)
         {%- endif %}
         {%- if cookiecutter.index_type | lower == 'strings' %}
-        f.index_lines(['abc', 'cde', 'efg'], batch_size=64, read_mode='r', size=num_docs)
+        data_path = os.environ.get('DATA_PATH', None)
+        if data_path:
+            f.index_lines(filepath=data_path, batch_size=16, read_mode='r', size=num_docs)
+        else:
+            f.index_lines(lines=['abc', 'cde', 'efg'], batch_size=16, read_mode='r', size=num_docs)
         {%- endif %}
         {%- if cookiecutter.index_type | lower == 'ndarray' %}
         import numpy as np
@@ -40,7 +44,7 @@ def index():
                 for v in fp:
                     yield v
 
-        f.index(input_fn, batch_size=64, read_mode='rb', size=num_docs)
+        f.index(input_fn, batch_size=8, read_mode='rb', size=num_docs)
         {%- endif %}
 
     # for search

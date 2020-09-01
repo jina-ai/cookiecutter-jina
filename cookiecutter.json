@@ -7,6 +7,6 @@
   "index_type": ["files", "strings", "ndarray", "customized"],
   "public_port": "65481",
   "parallel": "2",
-  "shards": "8",
+  "shards": "2",
   "version": "0.0.3"
 }
