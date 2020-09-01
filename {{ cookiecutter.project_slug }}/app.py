@@ -31,7 +31,7 @@ def index():
         if data_path:
             f.index_lines(filepath=data_path, batch_size=16, read_mode='r', size=num_docs)
         else:
-            f.index_lines(['abc', 'cde', 'efg'], batch_size=16, read_mode='r', size=num_docs)
+            f.index_lines(lines=['abc', 'cde', 'efg'], batch_size=16, read_mode='r', size=num_docs)
         {%- endif %}
         {%- if cookiecutter.index_type | lower == 'ndarray' %}
         import numpy as np
