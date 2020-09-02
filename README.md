@@ -19,6 +19,14 @@ Generate a Jina project:
 cookiecutter gh:jina-ai/cookiecutter-jina
 ```
 
+Install Jina Requirements
+
+```bash
+cd myprojects/
+pip install .
+```
+
+
 ## Exporting Environment Variables
 
 Before running ```python app.py```, set environment variables like ```MAX_DOCS``` and ```DATA_PATH``` using export:
