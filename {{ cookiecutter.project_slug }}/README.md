@@ -17,6 +17,9 @@ To install it in editable mode
 ```bash
 pip install -e .
 ```
+## Set environment variables
+
+Set env variables like ```DATA_PATH``` and ```MAX_DOCS```
 
 ## Run
 
@@ -42,6 +45,8 @@ To query
 ```bash
 docker run -p {{cookiecutter.public_port}}:{{cookiecutter.public_port}} -e "JINA_PORT=65481" jinaai/hub.app.{{ cookiecutter.project_slug }}:{{cookiecutter.version}} search
 ```
+## Note:
+The ```depth_range``` parameter in Flow and Pod YAML can be set according to the requirement of the implementation. This is used for recursive document structure in Jina.
 
 ## License
 

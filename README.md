@@ -19,6 +19,12 @@ Generate a Jina project:
 cookiecutter gh:jina-ai/cookiecutter-jina
 ```
 
+## Exporting Environment Variables
+
+Before running ```python app.py```, set environment variables like ```MAX_DOCS``` and ```DATA_PATH``` using export:
+
+For instance: ```export DATA_PATH='data/startrek_tng.csv```
+
 ## Fork This / Create Your Own
 
 If you have differences in your preferred setup, I encourage you to fork this
