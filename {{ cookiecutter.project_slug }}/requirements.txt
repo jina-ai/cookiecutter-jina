@@ -8,3 +8,10 @@ torch>=1.5.1
 {%- if cookiecutter.task_type | lower == 'cv' %}
 tensorflow >= 2.0
 {%- endif %}
+
+{%- if cookiecutter.task_type | lower == 'http' %}
+flask
+flask_cors
+gevent
+python-magic
+{%- endif %}
