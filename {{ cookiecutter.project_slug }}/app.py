@@ -27,7 +27,7 @@ def index():
         f.index_files('data/**/*.png', batch_size=8, read_mode='rb', size=num_docs)
         {%- endif %}
         {%- if cookiecutter.index_type | lower == 'strings' %}
-        data_path = os.environ.get('DATA_PATH', None)
+        data_path = os.path.join(os.path.dirname(__file__), os.environ.get('DATA_PATH', None))
         if data_path:
             f.index_lines(filepath=data_path, batch_size=16, read_mode='r', size=num_docs)
         else:
