@@ -7,7 +7,7 @@ with:
 {%- if cookiecutter.task_type | lower == 'nlp' %}
 !TransformerTorchEncoder
 with:
-  pooling_strategy: auto
+  pool_strategy: auto
   model_name: distilbert-base-cased
   max_length: 96
 {%- endif %}

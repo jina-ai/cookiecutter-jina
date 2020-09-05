@@ -20,6 +20,8 @@ pip install -e .
 ## Set environment variables
 
 Set env variables like ```DATA_PATH``` and ```MAX_DOCS```
+For example, relative from the data/ folder:
+EXPORT DATA_PATH='./data/startrek_tng.csv'
 
 ## Run
 
