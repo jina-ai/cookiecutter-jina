@@ -31,7 +31,7 @@ pip install .
 
 Before running ```python app.py```, set environment variables like ```MAX_DOCS``` and ```DATA_PATH``` using export:
 
-For instance: ```export DATA_PATH='data/startrek_tng.csv```
+For instance: ```export DATA_PATH='./data/startrek_tng.csv'```
 
 ## Fork This / Create Your Own
 
