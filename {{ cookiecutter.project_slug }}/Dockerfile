@@ -1,4 +1,4 @@
-FROM jinaai/jina:devel
+FROM jinaai/jina:{{ cookiecutter.jina_version }}
 
 ADD requirements.txt .
 
