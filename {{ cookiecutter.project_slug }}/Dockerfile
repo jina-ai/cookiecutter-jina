@@ -1,10 +1,9 @@
 FROM jinaai/jina:{{ cookiecutter.jina_version }}
 
-ADD requirements.txt .
+COPY . /workspace
+WORKDIR /workspace
 
 RUN apt-get update && pip install -r requirements.txt
-
-COPY . /
 
 RUN python app.py dryrun
 
