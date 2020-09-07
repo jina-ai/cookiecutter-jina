@@ -11,7 +11,7 @@ Cookiecutter template for a Jina project
 
 ```bash
 pip install jina[devel]
-jina hub new --type=app
+jina hub new --type app
 ```
 
 ### Use without Jina
