@@ -1,15 +1,1 @@
-jina==0.5.0
-jina[http]==0.5.0
-flask
-flask_cors
-gevent
-python-magic
-{%- if cookiecutter.task_type | lower == 'nlp' %}
-transformers==3.0.2
-torch>=1.5.1
-{%- endif %}
-
-{%- if cookiecutter.task_type | lower == 'cv' %}
-tensorflow >= 2.0
-{%- endif %}
-
+jina[devel,torch,tensorflow,transformers]=={{ cookiecutter.jina_version }}
