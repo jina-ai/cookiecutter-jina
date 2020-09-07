@@ -1,5 +1,6 @@
 {
   "project_name": "My Neural Search Project",
+  "jina_version": "0.5.0"
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "author_name": "Jina's friend",
   "project_short_description": "A demo neural search project that uses Jina. Jina is the cloud-native neural search framework powered by state-of-the-art AI and deep learning.",
