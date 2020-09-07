@@ -4,15 +4,3 @@ with:
 metas:
   name: doc_indexer  # a customized name
   workspace: $WORKDIR
-requests:
-  on:
-    IndexRequest:
-      - !KVIndexDriver
-        with:
-          executor: doc_indexer
-          depth_range: [0, 0]
-    SearchRequest:
-      - !KVSearchDriver
-        with:
-          executor: doc_indexer
-          traverse_on: matches
