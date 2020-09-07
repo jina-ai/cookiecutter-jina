@@ -1,5 +1,5 @@
 {%- if cookiecutter.task_type | lower == 'cv' %}
-!BiTImageEncoder
+!BigTransferEncoder
 with:
   model_path: pretrained
   pool_strategy: avg
@@ -11,15 +11,3 @@ with:
   model_name: distilbert-base-cased
   max_length: 96
 {%- endif %}
-requests:
-  on:
-    IndexRequest:
-      - !EncodeDriver
-        with:
-          traverse_on: chunks
-          depth_range: [1, 1]
-    SearchRequest:
-      - !EncodeDriver
-        with:
-          traverse_on: chunks
-          depth_range: [0, 0]
