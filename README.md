@@ -7,7 +7,7 @@ Cookiecutter template for a Jina project
 ## Quick start
 
 
-### Use with Jina
+### Use with Jina (>=0.5.4)
 
 ```bash
 pip install jina[devel]
