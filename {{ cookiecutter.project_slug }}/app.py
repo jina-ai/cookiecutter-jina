@@ -5,7 +5,7 @@ import sys
 
 from jina.flow import Flow
 
-num_docs = os.environ.get('MAX_DOCS', 500)
+num_docs = int(os.environ.get('MAX_DOCS', 500))
 
 def config():
     parallel = {{cookiecutter.parallel}} if sys.argv[1] == 'index' else 1
