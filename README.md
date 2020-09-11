@@ -14,6 +14,25 @@ pip install jina[devel]
 jina hub new --type app
 ```
 
+It will start a wizard in CLI to guide you create your first app. The resulted file structure should look like the following:
+
+```text
+- MyAwesomeApp/
+    |
+    |- Dockerfile
+    |- README.md
+    |- requirements.txt
+    |- app.py
+    |- flows/
+        |- index.yml
+        |- query.yml
+    |- pods/
+        |- craft.yml
+        |- chunk.yml
+        |- doc.yml
+        |- encode.yml
+```
+
 ### Use without Jina
 
 Install the latest Cookiecutter if you haven't installed it yet (this requires
