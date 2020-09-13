@@ -47,7 +47,7 @@ def index():
         f.index(input_fn, batch_size=8, read_mode='rb', size=num_docs)
         {%- endif %}
 
-    # for search
+# for search
 def search():
     f = Flow.load_config('flows/query.yml')
 
