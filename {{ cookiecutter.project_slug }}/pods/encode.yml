@@ -1,7 +1,6 @@
 {%- if cookiecutter.task_type | lower == 'cv' %}
-!BigTransferEncoder
+!ImageTorchEncoder
 with:
-  model_path: pretrained
   pool_strategy: avg
 {%- endif %}
 {%- if cookiecutter.task_type | lower == 'nlp' %}
