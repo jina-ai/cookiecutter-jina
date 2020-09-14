@@ -35,7 +35,7 @@ def index():
         {%- endif %}
         {%- if cookiecutter.index_type | lower == 'ndarray' %}
         import numpy as np
-        f.index_numpy(np.random.random([100, 512]), batch_size=64, size=num_docs)
+        f.index_ndarray(np.random.random([100, 512]), batch_size=64, size=num_docs)
         {%- endif %}
         {%- if cookiecutter.index_type | lower == 'customized' %}
 
@@ -47,7 +47,7 @@ def index():
         f.index(input_fn, batch_size=8, read_mode='rb', size=num_docs)
         {%- endif %}
 
-    # for search
+# for search
 def search():
     f = Flow.load_config('flows/query.yml')
 
