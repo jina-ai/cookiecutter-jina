@@ -7,6 +7,6 @@ with:
 !TransformerTorchEncoder
 with:
   pool_strategy: auto
-  model_name: distilbert-base-cased
+  pretrained_model_name_or_path: distilbert-base-cased
   max_length: 96
 {%- endif %}
