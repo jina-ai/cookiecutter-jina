@@ -58,9 +58,9 @@ pip install .
 
 ## Exporting Environment Variables
 
-Before running ```python app.py```, set environment variables like ```MAX_DOCS``` and ```DATA_PATH``` using export:
+Before running ```python app.py```, set environment variables like ```MAX_DOCS``` and ```JINA_DATA_PATH``` using export:
 
-For instance: ```export DATA_PATH='./data/startrek_tng.csv'```
+For instance: ```export JINA_DATA_PATH='./data/startrek_tng.csv'```
 
 ## Fork This / Create Your Own
 

@@ -1,19 +1,17 @@
 !Flow
-with:
-  logserver: true
 pods:
   crafter:
     uses: pods/craft.yml
-    parallel: $PARALLEL
+    parallel: $JINA_PARALLEL
     read_only: true
   encoder:
     uses: pods/encode.yml
-    parallel: $PARALLEL
+    parallel: $JINA_PARALLEL
     timeout_ready: 600000
     read_only: true
   chunk_indexer:
     uses: pods/chunk.yml
-    shards: $SHARDS
+    shards: $JINA_SHARDS
     separated_workspace: true
   doc_indexer:
     uses: pods/doc.yml

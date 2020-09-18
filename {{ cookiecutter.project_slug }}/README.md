@@ -19,9 +19,9 @@ pip install -e .
 ```
 ## Set environment variables
 
-Set env variables like ```DATA_PATH``` and ```MAX_DOCS```
+Set env variables like ```JINA_DATA_PATH``` and ```MAX_DOCS```
 For example, relative from the data/ folder:
-EXPORT DATA_PATH='./data/startrek_tng.csv'
+EXPORT JINA_DATA_PATH='./data/startrek_tng.csv'
 
 ## Run
 
@@ -46,6 +46,12 @@ docker run -v "$(pwd)/j:/workspace" jinaai/hub.app.{{ cookiecutter.project_slug 
 To query
 ```bash
 docker run -p {{cookiecutter.public_port}}:{{cookiecutter.public_port}} -e "JINA_PORT=65481" jinaai/hub.app.{{ cookiecutter.project_slug }}:{{cookiecutter.version}} search
+```
+
+For logging, add to `flows/index.yml`
+```
+with:
+  logserver: true
 ```
 ## Note:
 The ```depth_range``` parameter in Flow and Pod YAML can be set according to the requirement of the implementation. This is used for recursive document structure in Jina.
