@@ -11,8 +11,8 @@ def config():
     parallel = {{cookiecutter.parallel}} if sys.argv[1] == 'index' else 1
     shards = {{cookiecutter.shards}}
 
-    os.environ['PARALLEL'] = str(parallel)
-    os.environ['SHARDS'] = str(shards)
+    os.environ['JINA_PARALLEL'] = str(parallel)
+    os.environ['JINA_SHARDS'] = str(shards)
     os.environ['WORKDIR'] = './workspace'
     os.makedirs(os.environ['WORKDIR'], exist_ok=True)
     os.environ['JINA_PORT'] = os.environ.get('JINA_PORT', str({{cookiecutter.public_port}}))
@@ -27,7 +27,7 @@ def index():
         f.index_files('data/**/*.png', batch_size=8, read_mode='rb', size=num_docs)
         {%- endif %}
         {%- if cookiecutter.index_type | lower == 'strings' %}
-        data_path = os.path.join(os.path.dirname(__file__), os.environ.get('DATA_PATH', None))
+        data_path = os.path.join(os.path.dirname(__file__), os.environ.get('JINA_DATA_PATH', None))
         if data_path:
             f.index_lines(filepath=data_path, batch_size=16, read_mode='r', size=num_docs)
         else:
