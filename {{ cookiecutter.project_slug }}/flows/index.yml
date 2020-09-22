@@ -9,14 +9,7 @@ pods:
     parallel: $JINA_PARALLEL
     timeout_ready: 600000
     read_only: true
-  chunk_indexer:
-    uses: pods/chunk.yml
-    shards: $JINA_SHARDS
-    separated_workspace: true
   doc_indexer:
     uses: pods/doc.yml
-    needs: gateway
-  join_all:
-    uses: _merge
-    needs: [doc_indexer, chunk_indexer]
-    read_only: true
+    shards: $JINA_SHARDS
+    separated_workspace: true
