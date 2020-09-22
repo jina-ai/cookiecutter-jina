@@ -56,6 +56,8 @@ with:
 ## Note:
 The ```depth_range``` parameter in Flow and Pod YAML can be set according to the requirement of the implementation. This is used for recursive document structure in Jina.
 
+For ranking and scoring in the `My First Jina App`, we use the scorer of the VectorIndexer - our relevancy is the similarity.
+
 ## License
 
 Copyright (c) 2020 {{ cookiecutter.author_name }}. All rights reserved.
