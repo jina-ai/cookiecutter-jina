@@ -8,4 +8,5 @@ pods:
   chunk_indexer:
     uses: pods/chunk.yml
     shards: $JINA_SHARDS
+    uses_before: pods/craft.yml
     separated_workspace: true
