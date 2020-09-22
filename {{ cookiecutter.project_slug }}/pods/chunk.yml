@@ -8,10 +8,10 @@ components:
       workspace: $WORKDIR
   - !BinaryPbIndexer
     with:
-      index_filename: chunk.gz
+      index_filename: doc.gz
     metas:
-      name: chunkidx
+      name: docidx
       workspace: $WORKDIR
 metas:
-  name: chunk_compound_indexer
+  name: doc_compound_indexer
   workspace: $WORKDIR
