@@ -14,7 +14,7 @@ pip install jina[devel]
 jina hub new --type app
 ```
 
-It will start a wizard in CLI to guide you create your first app. The resulted file structure should look like the following:
+It will start a wizard in CLI to guide you to create your first app. The resulting file structure should look like:
 
 ```text
 - MyAwesomeApp/
@@ -36,7 +36,7 @@ It will start a wizard in CLI to guide you create your first app. The resulted f
 ### Use without Jina
 
 Install the latest Cookiecutter if you haven't installed it yet (this requires
-Cookiecutter 1.4.0 or higher)::
+Cookiecutter 1.4.0 or higher):
 
 ```bash
 pip install -U cookiecutter
@@ -48,19 +48,21 @@ Generate a Jina project:
 cookiecutter gh:jina-ai/cookiecutter-jina
 ```
 
-Install Jina Requirements
+Install Jina requirements:
 
 ```bash
-cd myprojects/
+cd MyAwesomeApp/
 pip install .
 ```
 
 
 ## Exporting Environment Variables
 
-Before running ```python app.py```, set environment variables like ```MAX_DOCS``` and ```JINA_DATA_PATH``` using export:
+Before running ```python app.py```, set environment variables like ```MAX_DOCS``` and ```JINA_DATA_PATH``` using export. For example:
 
-For instance: ```export JINA_DATA_PATH='./data/startrek_tng.csv'```
+```bash
+export JINA_DATA_PATH='./data/startrek_tng.csv'
+```
 
 ## Fork This / Create Your Own
 
@@ -73,3 +75,12 @@ be a fork.
 
 * It's up to you whether or not to rename your fork/own version. Do whatever
   you think sounds good.
+  
+## Best Practices
+
+Jina apps created with the methods above:
+
+- Store their Pods in the `pods` directory
+- Store their Flows in the `flows` directory
+
+We highly encourage you to use these methods for your own apps, and especially if you're planning to create examples for Jina.
