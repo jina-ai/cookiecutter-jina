@@ -1,1 +1,2 @@
-jina[devel,torch,tensorflow,transformers]=={{ cookiecutter.jina_version }}
+jina[devel,torch,tensorflow]=={{ cookiecutter.jina_version }}
+transformers==3.5.1
