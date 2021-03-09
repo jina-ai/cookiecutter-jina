@@ -9,14 +9,9 @@
 ## Install
 
 ```bash
-pip install .
+pip install -r requirements.txt
 ```
 
-To install it in editable mode
-
-```bash
-pip install -e .
-```
 ## Set environment variables
 
 Set env variables like ```JINA_DATA_PATH``` and ```MAX_DOCS```
