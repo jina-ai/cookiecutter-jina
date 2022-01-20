@@ -1,3 +1,8 @@
+DEPRECATED: DO NOT USE. 
+
+ALTERNATIVES:
+- you can fork one of the built-in hello world examples to your own app. See [here](https://docs.jina.ai/get-started/hello-world/#fork-one-and-start-building)
+
 # cookiecutter-jina
 
 [![Jina](https://github.com/jina-ai/jina/blob/master/.github/badges/jina-badge.svg?raw=true  "We fully commit to open-source")](https://get.jina.ai)
